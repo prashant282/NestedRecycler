@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "974410543740",
+    "firebase_url": "https://nestedrecycler-ebbec.firebaseio.com",
+    "project_id": "nestedrecycler-ebbec",
+    "storage_bucket": "nestedrecycler-ebbec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974410543740:android:056532dbb36ea64607cff9",
+        "android_client_info": {
+          "package_name": "com.example.user.nestedrecycler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974410543740-rmgj0b5lnng3abo145lkq4laksoqav1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbMV5Xr_18t6_lCtgKmcDV1omRe_0IylA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974410543740-rmgj0b5lnng3abo145lkq4laksoqav1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
