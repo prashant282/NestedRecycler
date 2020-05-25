@@ -20,7 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class VerticalRecyclerAdapter extends FirestoreRecyclerAdapter<VerticalModel,VerticalRecyclerAdapter.VerticalRecyclerViewHolder> {
+public class VerticalRecyclerAdapter extends RecyclerView.Adapter<VerticalRecyclerAdapter.VerticalRecyclerViewHolder> {
 
     Context context;
     ArrayList<VerticalModel> arrayList;
@@ -40,7 +40,7 @@ public class VerticalRecyclerAdapter extends FirestoreRecyclerAdapter<VerticalMo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VerticalRecyclerViewHolder holder, int position,@NonNull VerticalModel model) {
+    public void onBindViewHolder(@NonNull VerticalRecyclerViewHolder holder, int position) {
         final VerticalModel verticalModel=arrayList.get(position);
         String title=verticalModel.getTitle();
         ArrayList<HorizontalModel> singleItem=verticalModel.getArrayList();

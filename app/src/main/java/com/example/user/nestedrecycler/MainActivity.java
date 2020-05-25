@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        db.collection("Total_Six")
+        db.collection("Manmaani")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -45,15 +45,17 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             int count=0;
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                System.out.println( document.getId() + " => " + document.getData().get("first_name")+count++);
-                                System.out.println( document.getId() + " => " + document.getData().get("last_name"));
-                                System.out.println( document.getId() + " => " + document.getData().get("nick_name"));
+                                System.out.println( document.getId() + " => " + document.getData().get("name")+count++);
+                                System.out.println( document.getId() + " => " + document.getData().get("description"));
+//                                System.out.println( document.getId() + " => " + document.getData().get("nick_name"));
                                 System.out.println(document.getId().getClass()+ " => " +document.getData().getClass());
-                                String[] arr={(String)document.getData().get("first_name"),
-                                        (String)document.getData().get("last_name"),
-                                        (String)document.getData().get("nick_name")};
+//                                String[] arr={(String)document.getData().get("first_name"),
+//                                        (String)document.getData().get("last_name"),
+//                                        (String)document.getData().get("nick_name")};
+                                String[] arr={(String)document.getData().get("name"),
+                                        (String)document.getData().get("description")};
                                 hm.put(document.getId(), arr);
-                                a=(String)document.getData().get("last_name");
+                                a=(String)document.getData().get("description");
                                 System.out.println(a+"lllllllllllllllllllllll");
 
                             }
@@ -84,14 +86,14 @@ public class MainActivity extends AppCompatActivity {
 
             String[] value =(String[]) mapElement.getValue();
 
-            System.out.println( key+" : "+value[0]+" "+value[1]+" "+value[2]+"nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
+            System.out.println( key+" : "+value[0]+" "+value[1]+" "+"nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
             VerticalModel verticalModel =new VerticalModel();
             verticalModel.setTitle(key);
             ArrayList<HorizontalModel> arrayList =new ArrayList<>();
-            for(int j=0;j<5;j++){
+            for(int j=0;j<3;j++){
                 HorizontalModel horizontalModel=new HorizontalModel();
-                horizontalModel.setDescription(value[0]+value[1]);
-                horizontalModel.setName(value[2]);
+                horizontalModel.setDescription(value[0]);
+                horizontalModel.setName(value[1]);
                 arrayList.add(horizontalModel);
             }
             verticalModel.setArrayList(arrayList);
